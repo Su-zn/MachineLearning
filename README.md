@@ -1,9 +1,11 @@
 📌 Project Overview
+
 This repository contains a complete deep learning pipeline built with TensorFlow and Keras. The project benchmarks multiple neural network architectures on a fast-food dataset to optimize image classification performance on a GPU setup.
 
 The workflow includes automated corrupt image purging, high-throughput TensorFlow data pipelines, mixed-precision training, callbacks, and comparative evaluation metrics.
 
 🛠️ Key Features
+
 Automated Data Cleaning: Audits raw images using PIL and imghdr to detect and remove corrupt files prior to training.
 
 Optimized Data Pipeline: Leverages TensorFlow image_dataset_from_directory with AUTOTUNE prefetching, caching, and batching.
@@ -20,12 +22,13 @@ Advanced Training Workflows: Integrates EarlyStopping, ReduceLROnPlateau, and mi
 
 Model Evaluation & Visualization: Generates confusion matrices, ROC/AUC curves, and classification reports using Scikit-learn, Matplotlib, and Seaborn.
 
-Model,Architecture Type,Objective
-Model 1,Custom Baseline CNN,Establish baseline accuracy from scratch
-Model 2,Transfer Learning,Harness pre-trained ImageNet representations
-Model 3,Fine-Tuned Backbone,Optimize target class feature extraction
+Model,Architecture
+-Model 1,Custom Baseline CNN,Establish baseline accuracy from scratch
+-Model 2,Transfer Learning,Harness pre-trained ImageNet representations
+-Model 3,Fine-Tuned Backbone,Optimize target class feature extraction
 
-Tech Stack
+🧰 Tech Stack
+
 Language: Python
 
 Deep Learning: TensorFlow, Keras
