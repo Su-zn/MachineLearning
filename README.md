@@ -1,8 +1,39 @@
-Fast-Food Image Classification PipelineAn end-to-end computer vision project comparing a custom CNN, transfer learning, and fine-tuned architectures to classify 10 fast-food categories across 18,000+ images.📌 Project OverviewThis repository contains a complete deep learning pipeline built with TensorFlow and Keras. The project benchmarks multiple neural network architectures on a fast-food dataset to optimize image classification performance on a GPU setup.The workflow includes automated corrupt image purging, high-throughput TensorFlow data pipelines, mixed-precision training, callbacks, and comparative evaluation metrics.🛠️ Key FeaturesAutomated Data Cleaning: Audits raw images using PIL and imghdr to detect and remove corrupt files prior to training.Optimized Data Pipeline: Leverages TensorFlow image_dataset_from_directory with AUTOTUNE prefetching, caching, and batching.Multi-Model Benchmarking: Iterates through 3 distinct architectures:Baseline CNN: Built from scratch with Conv2D, MaxPooling, and Dropout layers.Transfer Learning Model: Leverages a pre-trained backbone (e.g., MobileNetV2 / ResNet) with frozen weights for fast feature extraction.Fine-Tuned Model: Unfreezes top layers of the pre-trained backbone with custom dense layers for specialized accuracy.Advanced Training Workflows: Integrates EarlyStopping, ReduceLROnPlateau, and mixed-precision policies for efficient model convergence.Model Evaluation & Visualization: Generates confusion matrices, ROC/AUC curves, and classification reports using Scikit-learn, Matplotlib, and Seaborn.📊 Model Architecture ComparisonModelArchitecture TypeObjectiveModel 1Custom Baseline CNNEstablish baseline accuracy from scratchModel 2Transfer LearningHarness pre-trained ImageNet representationsModel 3Fine-Tuned BackboneOptimize target class feature extraction🧰 Tech StackLanguage: PythonDeep Learning: TensorFlow, KerasData & Image Processing: NumPy, Pandas, PIL (Pillow), imghdrVisualization & Metrics: Matplotlib, Seaborn, Scikit-learn📂 Dataset Structuredataset
+📌 Project Overview
+This repository contains a complete deep learning pipeline built with TensorFlow and Keras. The project benchmarks multiple neural network architectures on a fast-food dataset to optimize image classification performance on a GPU setup.
 
-    
-Total Images: 18,000+Input Resolution: 160x160 pixels🚀 Getting Started1. Clone the RepositoryBashgit clone https://github.com/your-username/fast-food-image-classification.git
+The workflow includes automated corrupt image purging, high-throughput TensorFlow data pipelines, mixed-precision training, callbacks, and comparative evaluation metrics.
+
+🛠️ Key Features
+Automated Data Cleaning: Audits raw images using PIL and imghdr to detect and remove corrupt files prior to training.
+
+Optimized Data Pipeline: Leverages TensorFlow image_dataset_from_directory with AUTOTUNE prefetching, caching, and batching.
+
+Multi-Model Benchmarking: Iterates through 3 distinct architectures:
+
+Baseline CNN: Built from scratch with Conv2D, MaxPooling, and Dropout layers.
+
+Transfer Learning Model: Leverages a pre-trained backbone (e.g., MobileNetV2 / ResNet) with frozen weights for fast feature extraction.
+
+Fine-Tuned Model: Unfreezes top layers of the pre-trained backbone with custom dense layers for specialized accuracy.
+
+Advanced Training Workflows: Integrates EarlyStopping, ReduceLROnPlateau, and mixed-precision policies for efficient model convergence.
+
+Model Evaluation & Visualization: Generates confusion matrices, ROC/AUC curves, and classification reports using Scikit-learn, Matplotlib, and Seaborn.
+
+Model,Architecture Type,Objective
+Model 1,Custom Baseline CNN,Establish baseline accuracy from scratch
+Model 2,Transfer Learning,Harness pre-trained ImageNet representations
+Model 3,Fine-Tuned Backbone,Optimize target class feature extraction
+
+Tech Stack
+Language: Python
+
+Deep Learning: TensorFlow, Keras
+
+Data & Image Processing: NumPy, Pandas, PIL (Pillow), imghdr
+
+Visualization & Metrics: Matplotlib, Seaborn, Scikit-learn
+
+1. Clone the Repository
+git clone https://github.com/your-username/fast-food-image-classification.git
 cd fast-food-image-classification
-2. Install DependenciesBashpip install -r requirements.txt
-3. Run PipelineExecute the main notebook or script to clean the data, prepare TensorFlow datasets, and train the models:Bashpython main.py
-📈 Evaluation DeliverablesClassification Reports: Precision, Recall, and F1-Scores per class.Confusion Matrices: Detailed heatmaps illustrating cross-class predictions.ROC / AUC Curves: Class-wise trade-offs between True Positive and False Positive rate
